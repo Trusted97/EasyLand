@@ -14,6 +14,10 @@
 	<noscript><link type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet"></noscript>
 	<link type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet">
 
+	<link rel="preload" href="<?php echo base_url('assets/style.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link type="text/css" href="<?php echo base_url('assets/style.css'); ?>" rel="stylesheet"></noscript>
+	<link type="text/css" href="<?php echo base_url('assets/style.css'); ?>" rel="stylesheet">
+
 	<script type="text/javascript" defer src="<?php echo base_url('assets/jquery-3.4.1.min.js'); ?>"></script>
 	<script type="text/javascript" defer src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
 
