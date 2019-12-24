@@ -25,29 +25,29 @@
 
 </head>
 <body>
-	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-		<a class="navbar-brand" href="<?php echo base_url(); ?>">E-Land</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsMenu" aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+  <?php if ($this->ion_auth->logged_in()): ?>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  		<a class="navbar-brand" href="<?php echo base_url(); ?>">E-Land</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsMenu" aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+  			<span class="navbar-toggler-icon"></span>
+  		</button>
 
-		<div class="collapse navbar-collapse" id="navbarsMenu">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Regolamento</a>
-				</li>
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Ambientazione</a>
-				</li>
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Razze di Gioco</a>
-				</li>
-			</ul>
-			<?php if ($this->ion_auth->logged_in()): ?>
-				<a class="btn btn-primary my-2 my-sm-0" href="<?php echo site_url('auth/index'); ?>">Dashboard</a>
-			<?php else: ?>
-				<a class="btn btn-primary my-2 my-sm-0 mr-3" href="#">Iscriviti</a>
-				<a class="btn btn-outline-light my-2 my-sm-0" href="<?php echo site_url('admin'); ?>">Accedi</a>
-			<?php endif; ?>
-		</div>
-	</nav>
+  		<div class="collapse navbar-collapse" id="navbarsMenu">
+  			<ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+  					<a class="nav-link" href="#">Gestione utenti</a>
+  				</li>
+  				<li class="nav-item active">
+  					<a class="nav-link" href="#">Gestione Regolamento</a>
+  				</li>
+  				<li class="nav-item active">
+  					<a class="nav-link" href="#">Gestione Ambientazione</a>
+  				</li>
+  				<li class="nav-item active">
+  					<a class="nav-link" href="#">Gestione Razze di Gioco</a>
+  				</li>
+  			</ul>
+  			<a class="btn btn-outline-light my-2 my-sm-0" href="<?php echo site_url(); ?>">Torna alla home</a>
+  		</div>
+  	</nav>
+  <?php endif; ?>

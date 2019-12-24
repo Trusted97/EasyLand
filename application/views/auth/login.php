@@ -1,28 +1,35 @@
-<h1><?php echo lang('login_heading');?></h1>
-<p><?php echo lang('login_subheading');?></p>
+<?php if ($message != null): ?>
+  <div id="infoMessage" class="alert alert-warning" role="alert"><?php echo $message;?></div>
+<?php endif; ?>
 
-<div id="infoMessage"><?php echo $message;?></div>
+<?php echo form_open("auth/login", $form_attributes);?>
 
-<?php echo form_open("auth/login");?>
+  <div class="text-center mb-4">
+    <img class="mb-4" src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal"><?php echo lang('login_heading');?></h1>
+    <p><?php echo lang('login_subheading');?></p>
+  </div>
 
-  <p>
-    <?php echo lang('login_identity_label', 'identity');?>
+  <div class="form-label-group">
     <?php echo form_input($identity);?>
-  </p>
+    <label for="inputEmail">Email</label>
+  </div>
 
-  <p>
-    <?php echo lang('login_password_label', 'password');?>
+  <div class="form-label-group">
     <?php echo form_input($password);?>
-  </p>
+    <label for="inputPassword">Password</label>
+  </div>
 
-  <p>
-    <?php echo lang('login_remember_label', 'remember');?>
-    <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
-  </p>
+  <div class="checkbox mb-3">
+    <label>
+      <?php echo form_checkbox('remember', '1', false, 'id="remember"');?> Ricordami
+    </label>
+  </div>
 
+  <p><?php echo form_submit('submit', lang('login_submit_btn'), "class='btn btn-lg btn-primary btn-block'");?></p>
 
-  <p><?php echo form_submit('submit', lang('login_submit_btn'));?></p>
+  <?php echo form_close();?>
 
-<?php echo form_close();?>
-
-<p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
+  <div class="alert alert-secondary" role="alert">
+    Password dimenticata? <a href="forgot_password" class="alert-link">Clicca qui per recuperarla</a>
+  </div>
