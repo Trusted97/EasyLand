@@ -20,31 +20,31 @@ $( document ).ready(function() {
     //   return "";
     // }
 
-    $( "#addRule" ).on( "click", function() {
-
-      var rule_title = $('#rule_name').val();
-      var rule_body = $('#rule_body').val();
-
-      if ( rule_title != '' && rule_body != ''){
-        alert('YEEEE '+rule_title+' '+rule_body);
-
-        $.ajax({
-          method: "POST",
-          url: site_url+"rulebook/add_new_rule",
-          data: {
-            rule_title: rule_title,
-            rule_body: rule_body
-          }
-        })
-        .done(function( msg ) {
-          alert( "Data Saved: " + msg );
-        });
-
-      } else {
-        alert('Tutti i campi sono richiesti '+site_url);
-      }
-
-    });
+    // $( "#addRule" ).on( "click", function() {
+    //
+    //   var rule_title = $('#rule_name').val();
+    //   var rule_body = $('#rule_body').val();
+    //
+    //   if ( rule_title != '' && rule_body != ''){
+    //     alert('YEEEE '+rule_title+' '+rule_body);
+    //
+    //     $.ajax({
+    //       method: "POST",
+    //       url: site_url+"rulebook/add_new_rule",
+    //       data: {
+    //         rule_title: rule_title,
+    //         rule_body: rule_body
+    //       }
+    //     })
+    //     .done(function( msg ) {
+    //       alert( "Data Saved: " + msg );
+    //     });
+    //
+    //   } else {
+    //     alert('Tutti i campi sono richiesti '+site_url);
+    //   }
+    //
+    // });
 
   }
 

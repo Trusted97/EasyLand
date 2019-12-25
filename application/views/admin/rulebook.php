@@ -1,21 +1,24 @@
 <input id="site_url" type="hidden" value="<?php echo site_url(); ?>">
-<div id="rulebook_container" class="container-fluid mt-5">
+<div id="rulebook_container" class="container-fluid mt-2">
   <div class="row">
     <div class="mt-2 mb-2 col-lg-12">
-      <!-- Single button -->
-      <div class="form-group">
-        <label for="ruleName">Nome Regola</label>
-        <input id="rule_name" type="text" class="form-control" placeholder="Inserisci il nome della regola">
-      </div>
 
-      <div class="form-group">
-        <label for="ruleBody">Corpo regola</label>
-        <textarea id="rule_body" class="form-control" rows="3" placeholder="Inserisci qui il corpo della regola"></textarea>
-      </div>
+      <?php echo form_open("rulebook/add_new_rule");?>
+        <div class="form-group">
+          <label for="ruleName">Nome Regola</label>
+          <input id="rule_name" name="rule_title" type="text" class="form-control" placeholder="Inserisci il nome della regola">
+        </div>
 
-      <div class="form-group">
-        <input id="addRule" class="btn btn-primary my-2 my-sm-0" type="button" value="Aggiungi Regola">
-      </div>
+        <div class="form-group">
+          <label for="ruleBody">Corpo regola</label>
+          <textarea id="rule_body" name="rule_body" class="form-control" rows="3" placeholder="Inserisci qui il corpo della regola"></textarea>
+        </div>
+
+        <div class="form-group">
+          <input id="addRule" class="btn btn-primary my-2 my-sm-0" type="submit" value="Aggiungi Regola">
+        </div>
+      <?php echo form_close();?>
+
     </div>
   </div>
 
@@ -43,7 +46,7 @@
     </table>
   <?php else: ?>
     <div class="container-fluid">
-      <h1>Non è stata creata alcuna regola!</h1>
+      <p>Non è stata creata alcuna regola!</p>
     </div>
   <?php endif; ?>
 
