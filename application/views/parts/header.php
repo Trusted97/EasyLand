@@ -47,7 +47,7 @@
 				<a class="btn btn-primary my-2 my-sm-0" href="<?php echo site_url('auth/index'); ?>">Dashboard</a>
 			<?php else: ?>
 				<a class="btn btn-primary my-2 my-sm-0 mr-3" href="#">Iscriviti</a>
-				<a class="btn btn-outline-light my-2 my-sm-0" href="<?php echo site_url('admin'); ?>">Accedi</a>
+				<a class="btn btn-outline-light my-2 my-sm-0" href="<?php echo site_url('auth/index'); ?>">Accedi</a>
 			<?php endif; ?>
 		</div>
 	</nav>

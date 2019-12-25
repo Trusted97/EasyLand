@@ -18,10 +18,11 @@
 	<noscript><link type="text/css" href="<?php echo base_url('assets/style.css'); ?>" rel="stylesheet"></noscript>
 	<link type="text/css" href="<?php echo base_url('assets/style.css'); ?>" rel="stylesheet">
 
-	<script type="text/javascript" defer src="<?php echo base_url('assets/jquery-3.4.1.min.js'); ?>"></script>
-	<script type="text/javascript" defer src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
+	<script type="text/javascript" src="<?php echo base_url('assets/jquery-3.4.1.min.js'); ?>"></script>
+	<script type="text/javascript" src="<?php echo base_url('assets/admin/panel.js'); ?>"></script>
+	<script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
 
-	<title>E-Land</title>
+	<title>E-Land - <?php echo $title ?></title>
 
 </head>
 <body>
@@ -35,10 +36,10 @@
   		<div class="collapse navbar-collapse" id="navbarsMenu">
   			<ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-  					<a class="nav-link" href="#">Gestione utenti</a>
+  					<a class="nav-link" href="<?php echo base_url('auth/index') ?>">Gestione utenti</a>
   				</li>
   				<li class="nav-item active">
-  					<a class="nav-link" href="#">Gestione Regolamento</a>
+  					<a class="nav-link" href="<?php echo base_url('admin-rulebook'); ?>">Gestione Regolamento</a>
   				</li>
   				<li class="nav-item active">
   					<a class="nav-link" href="#">Gestione Ambientazione</a>

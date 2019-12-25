@@ -77,10 +77,14 @@ class Auth extends CI_Controller
             $remember = (bool)$this->input->post('remember');
 
             if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember)) {
-                //if the login is successful
-                //redirect them back to the home page //No go to dashboard
-                $this->session->set_flashdata('message', $this->ion_auth->messages());
-                redirect('auth/index', 'refresh');
+                //if the login is successful and is an admin redirect to dashboard otherwise go to user admin screen
+                if ($this->ion_auth->in_group('admin')) {
+                    $this->session->set_flashdata('message', $this->ion_auth->messages());
+                    redirect('auth/index', 'refresh');
+                } else {
+                    echo "string";
+                    //Write code for redirect simple users
+                }
             } else {
                 // if the login was un-successful
                 // redirect them back to the login page
