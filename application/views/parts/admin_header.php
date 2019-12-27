@@ -60,7 +60,7 @@
   					<a class="nav-link" href="#">Gestione Ambientazione</a>
   				</li>
   				<li class="nav-item active">
-  					<a class="nav-link" href="#">Gestione Razze di Gioco</a>
+  					<a class="nav-link" href="<?php echo base_url('races/manage'); ?>">Gestione Razze di Gioco</a>
   				</li>
   			</ul>
   			<a class="btn btn-outline-light my-2 my-sm-0" href="<?php echo site_url(); ?>">Torna alla home</a>
