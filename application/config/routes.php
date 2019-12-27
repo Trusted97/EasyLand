@@ -50,9 +50,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-// RULEBOOK ROUTES
-$route['admin-rulebook'] = 'rulebook/admin_rulebook';
-
 $route['default_controller'] = 'homepage';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;

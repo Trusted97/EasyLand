@@ -19,8 +19,23 @@
 	<link type="text/css" href="<?php echo base_url('assets/style.css'); ?>" rel="stylesheet">
 
 	<script type="text/javascript" src="<?php echo base_url('assets/jquery-3.4.1.min.js'); ?>"></script>
-	<script type="text/javascript" src="<?php echo base_url('assets/admin/panel.js'); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
+
+	<?php if (isset($files['css_files'])): ?>
+
+	<?php foreach ($files['css_files'] as $file): ?>
+	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+	<?php endforeach; ?>
+
+	<?php endif; ?>
+
+	<?php if (isset($files['js_files'])): ?>
+
+		<?php foreach ($files['js_files'] as $file): ?>
+        <script type="text/javascript" src="<?php echo $file; ?>"></script>
+    <?php endforeach; ?>
+
+	<?php endif; ?>
 
 	<title>E-Land - <?php echo $title ?></title>
 
@@ -39,7 +54,7 @@
   					<a class="nav-link" href="<?php echo base_url('auth/index') ?>">Gestione utenti</a>
   				</li>
   				<li class="nav-item active">
-  					<a class="nav-link" href="<?php echo base_url('admin-rulebook'); ?>">Gestione Regolamento</a>
+  					<a class="nav-link" href="<?php echo base_url('rulebook/manage'); ?>">Gestione Regolamento</a>
   				</li>
   				<li class="nav-item active">
   					<a class="nav-link" href="#">Gestione Ambientazione</a>
