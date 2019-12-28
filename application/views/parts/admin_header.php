@@ -54,7 +54,7 @@
   					<a class="nav-link" href="<?php echo base_url('auth/index') ?>">Gestione Utenti</a>
   				</li>
 					<li class="nav-item active">
-  					<a class="nav-link" href="<?php echo base_url('auth/index') ?>">Gestione Giocatori</a>
+  					<a class="nav-link" href="<?php echo base_url('player/manage') ?>">Gestione Giocatori</a>
   				</li>
   				<li class="nav-item active">
   					<a class="nav-link" href="<?php echo base_url('rulebook/manage'); ?>">Gestione Regolamento</a>

@@ -40,7 +40,7 @@ class Player extends CI_Controller
         $crud->required_fields('player_nicename', 'player_users_id', 'player_description', 'player_race', 'player_equipment');
 
         $crud->set_relation('player_race', 'races', 'races_name');
-        $crud->set_relation('player_users_id', 'users', 'id');
+        $crud->set_relation('player_users_id', 'users', '{id} - {username}');
 
         $output = $crud->render();
 
