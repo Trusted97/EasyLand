@@ -51,7 +51,10 @@
   		<div class="collapse navbar-collapse" id="navbarsMenu">
   			<ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-  					<a class="nav-link" href="<?php echo base_url('auth/index') ?>">Gestione utenti</a>
+  					<a class="nav-link" href="<?php echo base_url('auth/index') ?>">Gestione Utenti</a>
+  				</li>
+					<li class="nav-item active">
+  					<a class="nav-link" href="<?php echo base_url('auth/index') ?>">Gestione Giocatori</a>
   				</li>
   				<li class="nav-item active">
   					<a class="nav-link" href="<?php echo base_url('rulebook/manage'); ?>">Gestione Regolamento</a>
@@ -61,6 +64,9 @@
   				</li>
   				<li class="nav-item active">
   					<a class="nav-link" href="<?php echo base_url('races/manage'); ?>">Gestione Razze di Gioco</a>
+  				</li>
+					<li class="nav-item active">
+  					<a class="nav-link" href="#">Gestione Land</a>
   				</li>
   			</ul>
   			<a class="btn btn-outline-light my-2 my-sm-0" href="<?php echo site_url(); ?>">Torna alla home</a>

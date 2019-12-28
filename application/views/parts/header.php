@@ -21,7 +21,7 @@
 	<script type="text/javascript" defer src="<?php echo base_url('assets/jquery-3.4.1.min.js'); ?>"></script>
 	<script type="text/javascript" defer src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
 
-	<title>E-Land</title>
+	<title><?php echo $title; ?></title>
 
 </head>
 <body>
@@ -34,13 +34,13 @@
 		<div class="collapse navbar-collapse" id="navbarsMenu">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="#">Regolamento</a>
+					<a class="nav-link" href="<?php echo site_url('regolamento'); ?>">Regolamento</a>
 				</li>
 				<li class="nav-item active">
 					<a class="nav-link" href="#">Ambientazione</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link" href="#">Razze di Gioco</a>
+					<a class="nav-link" href="<?php echo site_url('razze'); ?>">Razze di Gioco</a>
 				</li>
 			</ul>
 			<?php if ($this->ion_auth->logged_in()): ?>

@@ -5,14 +5,19 @@ class Rulebook extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        
+        $this->load->helper('url');
+        $this->load->model('rulebook_model');
+        $this->load->library('grocery_CRUD');
+    }
 
-        if (!$this->ion_auth->in_group('admin')) {
-            redirect('', 'refresh');
-        } else {
-            $this->load->database();
-            $this->load->helper('url');
-            $this->load->library('grocery_CRUD');
-        }
+    public function public_rulebook()
+    {
+        $data['title'] = 'Regolamento';
+        $data['rules_array'] = $this->rulebook_model->get_rules();
+        $this->load->view('parts/header', $data);
+        $this->load->view('public_rulebook');
+        $this->load->view('parts/footer');
     }
 
     public function manage()

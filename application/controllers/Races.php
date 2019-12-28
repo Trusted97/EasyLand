@@ -6,13 +6,19 @@ class Races extends CI_Controller
     {
         parent::__construct();
 
-        if (!$this->ion_auth->in_group('admin')) {
-            redirect('', 'refresh');
-        } else {
-            $this->load->database();
-            $this->load->helper('url');
-            $this->load->library('grocery_CRUD');
-        }
+        $this->load->database();
+        $this->load->model('races_model');
+        $this->load->helper('url');
+        $this->load->library('grocery_CRUD');
+    }
+
+    public function public_races()
+    {
+        $data['title'] = 'Razze';
+        $data['races_array'] = $this->races_model->get_races();
+        $this->load->view('parts/header', $data);
+        $this->load->view('public_races');
+        $this->load->view('parts/footer');
     }
 
     public function manage()
@@ -32,7 +38,7 @@ class Races extends CI_Controller
         ->display_as('races_cha', 'Bonus/Malus Carisma razza')
         ->display_as('races_image', 'Immagine razza');
 
-        $crud->set_field_upload('races_image', 'assets/uploads/files');
+        $crud->set_field_upload('races_image', 'assets/uploads/files/races_image');
 
         $crud->fields('races_name', 'races_description', 'races_str', 'races_dex', 'races_con', 'races_int', 'races_wis', 'races_cha', 'races_image');
         $crud->required_fields('races_name', 'races_description', 'races_str', 'races_dex', 'races_con', 'races_int', 'races_wis', 'races_cha', 'races_image');
