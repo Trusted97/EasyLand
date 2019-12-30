@@ -14,19 +14,19 @@
     <!-- Example row of columns -->
     <div class="row">
       <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <h2>Regolamento</h2>
+        <p>In questa sezione troverai il regolamento da rispettare all'interno della land da osservare sempre quando si è in gioco.</p>
+        <p><a class="btn btn-secondary" href="<?php echo site_url('regolamento'); ?>" role="button">Leggi le regole &raquo;</a></p>
       </div>
       <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <h2>Ambientazione</h2>
+        <p>L'ambientazione della land, dove è ambientata, in che epoca siamo e la sua storia in questa sezione</p>
+        <p><a class="btn btn-secondary" href="<?php echo site_url('ambientazione'); ?>" role="button">Esplora il mondo della land &raquo;</a></p>
       </div>
       <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <h2>Razze di gioco</h2>
+        <p>Le razze di gioco disponibili all'interno della land chi sarai in questo mondo?</p>
+        <p><a class="btn btn-secondary" href="<?php echo site_url('razze') ?>" role="button">Scopri le razze del gioco &raquo;</a></p>
       </div>
     </div>
 

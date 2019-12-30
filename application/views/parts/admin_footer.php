@@ -3,7 +3,6 @@
   <ul class="list-inline">
     <li class="list-inline-item"><a href="#">Privacy</a></li>
     <li class="list-inline-item"><a href="#">Cookie</a></li>
-    <li class="list-inline-item"><a href="#">Terms</a></li>
     <li class="list-inline-item"><a href="#">Contatti</a></li>
   </ul>
 </footer>

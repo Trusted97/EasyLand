@@ -71,7 +71,8 @@
             '<span class="paging-ends">10</span>',
             '<span class="current-total-results">'. $this->get_total_results() . '</span>'
         ),
-        $this->l('list_displaying'));
+        $this->l('list_displaying')
+    );
 
     include(__DIR__ . '/common_javascript_vars.php');
 ?>
@@ -89,7 +90,7 @@
     <br/>
     <div class="container-fluid gc-container">
         <div class="success-message hidden"><?php
-        if($success_message !== null){?>
+        if ($success_message !== null) {?>
            <?php echo $success_message; ?> &nbsp; &nbsp;
         <?php }
         ?></div>
@@ -105,7 +106,7 @@
                 <div class="table-container">
                     <?php echo form_open("", 'method="post" autocomplete="off" id="gcrud-search-form"'); ?>
                         <div class="header-tools">
-                            <?php if(!$unset_add){?>
+                            <?php if (!$unset_add) {?>
                                 <div class="floatL t5">
                                     <a class="btn btn-default btn-outline-dark" href="<?php echo $add_url?>">
                                         <i class="el el-plus"></i> &nbsp; <?php echo $this->l('list_add'); ?> <?php echo $subject?>
@@ -113,7 +114,7 @@
                                 </div>
                             <?php } ?>
                             <div class="floatR">
-                                <?php if(!$unset_export) { ?>
+                                <?php if (!$unset_export) { ?>
                                     <a class="btn btn-default btn-outline-dark t5 gc-export" data-url="<?php echo $export_url; ?>" href="javascript:;">
                                         <i class="el el-share floatL t3"></i>
                                         <span class="hidden-xs floatL l5">
@@ -122,7 +123,7 @@
                                         <div class="clear"></div>
                                     </a>
                                 <?php } ?>
-                                <?php if(!$unset_print) { ?>
+                                <?php if (!$unset_print) { ?>
                                     <a class="btn btn-default btn-outline-dark t5 gc-print" data-url="<?php echo $print_url; ?>" href="javascript:;">
                                         <i class="el el-print floatL t3"></i>
                                         <span class="hidden-xs floatL l5">
@@ -146,11 +147,11 @@
         							<th colspan="2" <?php if ($buttons_counter === 0) {?>class="hidden"<?php }?>>
                                         <?php echo $this->l('list_actions'); ?>
                                     </th>
-                                    <?php foreach($columns as $column){?>
+                                    <?php foreach ($columns as $column) {?>
                                         <th class="column-with-ordering" data-order-by="<?php echo $column->field_name; ?>"><?php echo $column->display_as; ?></th>
                                     <?php }?>
         						</tr>
-        						
+
         						<tr class="filter-row gc-search-row">
         							<td class="no-border-right <?php if ($buttons_counter === 0) {?>hidden<?php }?>">
                                         <?php if (!$unset_delete) { ?>
@@ -174,7 +175,7 @@
                                         </div>
                                         <div class="clear"></div>
                                     </td>
-                                    <?php foreach($columns as $column){?>
+                                    <?php foreach ($columns as $column) {?>
                                         <td>
                                             <input
                                                 type="text"
@@ -202,9 +203,9 @@
                                                 </div>
                                                 <div class="floatL r5 l5">
                                                     <select name="per_page" class="per_page form-control">
-                                                        <?php foreach($paging_options as $option){?>
+                                                        <?php foreach ($paging_options as $option) {?>
                                                             <option value="<?php echo $option; ?>"
-                                                                    <?php if($option == $default_per_page){?>selected="selected"<?php }?>>
+                                                                    <?php if ($option == $default_per_page) {?>selected="selected"<?php }?>>
                                                                         <?php echo $option; ?>&nbsp;&nbsp;
                                                             </option>
                                                         <?php }?>
@@ -226,7 +227,7 @@
 
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <a href="javascript:void(0)" class="clear-filtering dropdown-item">
-                                                        <i class="el el-broom"></i> Clear filtering
+                                                        <i class="el el-broom"></i> <?php echo $this->l('list_clear_filtering'); ?>
                                                     </a>
                                                 </div>
                                             </div>
@@ -273,9 +274,10 @@
                                                 <?php echo $list_displaying; ?>
                                                 <span class="full-total-container hidden">
                                                     <?php echo str_replace(
-                                                                "{total_results}",
-                                                                "<span class='full-total'>" . $this->get_total_results() . "</span>",
-                                                                $this->l('list_filtered_from'));
+            "{total_results}",
+            "<span class='full-total'>" . $this->get_total_results() . "</span>",
+            $this->l('list_filtered_from')
+        );
                                                     ?>
                                                 </span>
                                             </div>

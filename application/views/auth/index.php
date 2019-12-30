@@ -2,7 +2,9 @@
   <h1><?php echo lang('index_heading');?></h1>
   <p><?php echo lang('index_subheading');?></p>
 
-  <div id="infoMessage"><?php echo $message;?></div>
+  <?php if (isset($message)): ?>
+    <div class="alert alert-info" role="alert"><?php echo $message;?></div>
+  <?php endif; ?>
 
   <div class="table-responsive">
     <table class="table table-striped">

@@ -53,6 +53,7 @@ class Auth extends CI_Controller
 
             $this->load->view('parts/admin_header', $data);
             $this->_render_page('auth' . DIRECTORY_SEPARATOR . 'index', $this->data);
+            $this->load->view('parts/admin_footer', $data);
         }
     }
 
@@ -120,6 +121,7 @@ class Auth extends CI_Controller
 
             $this->load->view('parts/admin_header', $data);
             $this->_render_page('auth' . DIRECTORY_SEPARATOR . 'login', $this->data);
+            $this->load->view('parts/admin_footer');
         }
     }
 
@@ -511,6 +513,7 @@ class Auth extends CI_Controller
 
             $this->load->view('parts/admin_header', $data);
             $this->_render_page('auth' . DIRECTORY_SEPARATOR . 'create_user', $this->data);
+            $this->load->view('parts/admin_footer');
         }
     }
     /**
@@ -640,7 +643,12 @@ class Auth extends CI_Controller
             'type' => 'password'
         ];
 
+        $data["title"] = 'Nuovo Utente';
+        $data["description"] = '';
+
+        $this->load->view('parts/admin_header', $data);
         $this->_render_page('auth/edit_user', $this->data);
+        $this->load->view('parts/admin_footer');
     }
 
     /**
