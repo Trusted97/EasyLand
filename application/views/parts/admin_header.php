@@ -50,23 +50,28 @@
 
   		<div class="collapse navbar-collapse" id="navbarsMenu">
   			<ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-  					<a class="nav-link" href="<?php echo base_url('auth/index') ?>">Gestione Utenti</a>
-  				</li>
-					<li class="nav-item active">
-  					<a class="nav-link" href="<?php echo base_url('player/manage') ?>">Gestione Giocatori</a>
-  				</li>
+					<li class="nav-item dropdown active">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Gestione Utenti / Giocatori
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="<?php echo base_url('auth/index'); ?>">Gestione Utenti</a>
+							<a class="dropdown-item" href="<?php echo base_url('player/manage'); ?>">Gestione Giocatori</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown active">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Gestione Gioco
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Gestione Ambientazione</a>
+							<a class="dropdown-item" href="#">Gestione Gilde</a>
+							<a class="dropdown-item" href="<?php echo base_url('rulebook/manage'); ?>">Gestione Regolamento</a>
+							<a class="dropdown-item" href="<?php echo base_url('races/manage'); ?>">Gestione Razze di Gioco</a>
+						</div>
+					</li>
   				<li class="nav-item active">
-  					<a class="nav-link" href="<?php echo base_url('rulebook/manage'); ?>">Gestione Regolamento</a>
-  				</li>
-  				<li class="nav-item active">
-  					<a class="nav-link" href="#">Gestione Ambientazione</a>
-  				</li>
-  				<li class="nav-item active">
-  					<a class="nav-link" href="<?php echo base_url('races/manage'); ?>">Gestione Razze di Gioco</a>
-  				</li>
-					<li class="nav-item active">
-  					<a class="nav-link" href="#">Gestione Land</a>
+  					<a class="nav-link" href="<?php echo base_url('races/manage'); ?>">Gestione info Land</a>
   				</li>
   			</ul>
   			<a class="btn btn-outline-light my-2 my-sm-0" href="<?php echo site_url(); ?>">Torna alla home</a>

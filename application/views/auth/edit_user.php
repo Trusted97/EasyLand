@@ -16,11 +16,6 @@
       </p>
 
       <p>
-            <?php echo lang('edit_user_company_label', 'company');?> <br />
-            <?php echo form_input($company);?>
-      </p>
-
-      <p>
             <?php echo lang('edit_user_phone_label', 'phone');?> <br />
             <?php echo form_input($phone);?>
       </p>
@@ -44,15 +39,15 @@
                   $gID=$group['id'];
                   $checked = null;
                   $item = null;
-                  foreach($currentGroups as $grp) {
+                  foreach ($currentGroups as $grp) {
                       if ($gID == $grp->id) {
                           $checked= ' checked="checked"';
-                      break;
+                          break;
                       }
                   }
               ?>
               <input type="checkbox" name="groups[]" value="<?php echo $group['id'];?>"<?php echo $checked;?>>
-              <?php echo htmlspecialchars($group['name'],ENT_QUOTES,'UTF-8');?>
+              <?php echo htmlspecialchars($group['name'], ENT_QUOTES, 'UTF-8');?>
               </label>
           <?php endforeach?>
 
