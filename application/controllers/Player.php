@@ -11,28 +11,19 @@ class Player extends CI_Controller
         $this->load->library('grocery_CRUD');
     }
 
-    // public function public_races()
-    // {
-    //     $data['title'] = 'Razze';
-    //     $data['races_array'] = $this->races_model->get_races();
-    //     $this->load->view('parts/header', $data);
-    //     $this->load->view('public_races');
-    //     $this->load->view('parts/footer');
-    // }
-
     public function manage()
     {
         $crud = new grocery_CRUD();
 
         $crud->set_table('player')
-        ->set_subject('Giocatori')
-        ->columns('player_nicename', 'player_description', 'player_race', 'player_equipment', 'player_pics')
-        ->display_as('player_nicename', 'Nome Giocatore')
-        ->display_as('player_users_id', 'ID Utente')
-        ->display_as('player_description', 'Descrizione Giocatore')
-        ->display_as('player_race', 'Razza Giocatore')
-        ->display_as('player_equipment', 'Equip Giocatore')
-        ->display_as('player_pics', 'Immagine Giocatore');
+          ->set_subject('Giocatori')
+          ->columns('player_nicename', 'player_description', 'player_race', 'player_equipment', 'player_pics')
+          ->display_as('player_nicename', 'Nome Giocatore')
+          ->display_as('player_users_id', 'ID Utente')
+          ->display_as('player_description', 'Descrizione Giocatore')
+          ->display_as('player_race', 'Razza Giocatore')
+          ->display_as('player_equipment', 'Equip Giocatore')
+          ->display_as('player_pics', 'Immagine Giocatore');
 
         $crud->set_field_upload('player_pics', 'assets/uploads/files/player_image');
 

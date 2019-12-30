@@ -31,9 +31,9 @@
 
 	<?php if (isset($files['js_files'])): ?>
 
-		<?php foreach ($files['js_files'] as $file): ?>
-        <script type="text/javascript" src="<?php echo $file; ?>"></script>
-    <?php endforeach; ?>
+	<?php foreach ($files['js_files'] as $file): ?>
+  <script type="text/javascript" src="<?php echo $file; ?>"></script>
+  <?php endforeach; ?>
 
 	<?php endif; ?>
 
