@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author" content="Gianluca Benucci">
-	<meta name="generator" content="EasyLand 0.0.2" />
+	<meta name="generator" content="EasyLand 0.0.6" />
 	<meta name="robots" content="noindex, nofollow"/>
 
 	<link rel="preload" href="<?php echo site_url('assets/bootstrap/css/bootstrap.min.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
