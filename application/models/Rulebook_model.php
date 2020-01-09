@@ -11,7 +11,7 @@ class Rulebook_model extends CI_Model
 
     public function get_rules()
     {
-        $query = $this->db->get('rulebook');
+        $query = $this->db->get('land_rulebook');
         return $query->result();
     }
 }

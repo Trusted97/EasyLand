@@ -6,7 +6,6 @@ class Races extends CI_Controller
     {
         parent::__construct();
 
-        $this->load->database();
         $this->load->model('races_model');
         $this->load->helper('url');
         $this->load->library('grocery_CRUD');
@@ -25,7 +24,7 @@ class Races extends CI_Controller
     {
         $crud = new grocery_CRUD();
 
-        $crud->set_table('races')
+        $crud->set_table('land_races')
         ->set_subject('Razze')
         ->columns('races_name', 'races_description', 'races_str', 'races_dex', 'races_con', 'races_int', 'races_wis', 'races_cha', 'races_image')
         ->display_as('races_name', 'Nome razza')

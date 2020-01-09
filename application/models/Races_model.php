@@ -11,7 +11,7 @@ class Races_model extends CI_Model
 
     public function get_races()
     {
-        $query = $this->db->get('races');
+        $query = $this->db->get('land_races');
         return $query->result();
     }
 }

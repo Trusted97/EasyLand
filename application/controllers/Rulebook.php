@@ -24,7 +24,7 @@ class Rulebook extends CI_Controller
     {
         $crud = new grocery_CRUD();
 
-        $crud->set_table('rulebook')
+        $crud->set_table('land_rulebook')
         ->set_subject('Regole')
         ->columns('rule_title', 'rule_text')
         ->display_as('rule_title', 'Nome regola')

@@ -65,8 +65,9 @@
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="<?php echo site_url('story/manage') ?>">Gestione Ambientazione</a>
-							<a class="dropdown-item" href="#">Gestione Gilde</a>
-							<a class="dropdown-item" href="#">Gestione Oggetti</a>
+							<a class="dropdown-item" href="#">Gestione Gilde (Non disponibile)</a>
+							<a class="dropdown-item" href="<?php echo site_url('market/manage'); ?>">Gestione Mercati</a>
+							<a class="dropdown-item" href="<?php echo site_url('equip/manage'); ?>">Gestione Oggetti</a>
 							<a class="dropdown-item" href="<?php echo site_url('rulebook/manage'); ?>">Gestione Regolamento</a>
 							<a class="dropdown-item" href="<?php echo site_url('races/manage'); ?>">Gestione Razze di Gioco</a>
 						</div>

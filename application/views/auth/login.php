@@ -28,8 +28,8 @@
 
   <p><?php echo form_submit('submit', lang('login_submit_btn'), "class='btn btn-lg btn-primary btn-block'");?></p>
 
-  <?php echo form_close();?>
-
   <div class="alert alert-secondary" role="alert">
     Password dimenticata? <a href="forgot_password" class="alert-link">Clicca qui per recuperarla</a>
   </div>
+
+  <?php echo form_close();?>

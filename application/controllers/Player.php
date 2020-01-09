@@ -15,7 +15,7 @@ class Player extends CI_Controller
     {
         $crud = new grocery_CRUD();
 
-        $crud->set_table('player')
+        $crud->set_table('land_player')
           ->set_subject('Giocatori')
           ->columns('player_nicename', 'player_description', 'player_race', 'player_equipment', 'player_pics')
           ->display_as('player_nicename', 'Nome Giocatore')
@@ -30,7 +30,7 @@ class Player extends CI_Controller
         $crud->fields('player_nicename', 'player_users_id', 'player_description', 'player_race', 'player_equipment', 'player_pics');
         $crud->required_fields('player_nicename', 'player_users_id', 'player_description', 'player_race', 'player_equipment');
 
-        $crud->set_relation('player_race', 'races', 'races_name');
+        $crud->set_relation('player_race', 'land_races', 'races_name');
         $crud->set_relation('player_users_id', 'users', '{id} - {username}');
 
         $output = $crud->render();
