@@ -83,8 +83,10 @@ class Auth extends CI_Controller
                     $this->session->set_flashdata('message', $this->ion_auth->messages());
                     redirect('auth/index', 'refresh');
                 } else {
-                    echo "string";
-                    //Write code for redirect simple users
+                    $data['title'] = 'EasyLand';
+                    $this->load->view('parts/header', $data);
+                    $this->load->view('homepage');
+                    $this->load->view('parts/footer');
                 }
             } else {
                 // if the login was un-successful

@@ -44,18 +44,11 @@
 				</li>
 			</ul>
 
-			<?php if ($this->ion_auth->logged_in()): //If user is logged in display logout button?>
-				<a class="btn btn-outline-light mr-2" href="<?php echo site_url('auth/logout'); ?>">Logout</a>
-				<?php if ($this->ion_auth->in_group('admin')): //If user is an admin display button for dashboard and land sections?>
-					<a class="btn btn-primary my-2 my-sm-0" href="<?php echo site_url('auth/index'); ?>">Dashboard</a>
-					<a class="btn btn-primary ml-2 my-2 my-sm-0" href="<?php echo site_url('land'); ?>">Land</a>
-				<?php else: //otherwise display only the land button?>
-					<a class="btn btn-primary my-2 my-sm-0" href="<?php echo site_url('land/index'); ?>">Land</a>
-				<?php endif; ?>
-			<?php else: //If not logged in display button for register users or login?>
-				<a class="btn btn-primary my-2 my-sm-0 mr-3" href="#">Iscriviti</a>
-				<a class="btn btn-outline-light my-2 my-sm-0" href="<?php echo site_url('auth/index'); ?>">Accedi</a>
+			<a class="btn btn-primary my-2 my-sm-0 mr-2" href="<?php echo site_url('land/index'); ?>">Land</a>
+			<?php if ($this->ion_auth->in_group('admin')): ?>
+				<a class="btn btn-primary my-2 my-sm-0 mr-2" href="<?php echo site_url('auth/index'); ?>">Dashboard</a>
 			<?php endif; ?>
+			<a class="btn btn-outline-light mr-2" href="<?php echo site_url('auth/logout'); ?>">Logout</a>
 
 		</div>
 	</nav>

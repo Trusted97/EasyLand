@@ -16,17 +16,17 @@
       <div class="col-md-4">
         <h2>Regolamento</h2>
         <p>In questa sezione troverai il regolamento da rispettare all'interno della land da osservare sempre quando si è in gioco.</p>
-        <p><a class="btn btn-secondary" href="<?php echo site_url('regolamento'); ?>" role="button">Leggi le regole &raquo;</a></p>
+        <p><a class="btn btn-primary" href="<?php echo site_url('regolamento'); ?>" role="button">Leggi le regole &raquo;</a></p>
       </div>
       <div class="col-md-4">
         <h2>Ambientazione</h2>
         <p>L'ambientazione della land, dove è ambientata, in che epoca siamo e la sua storia in questa sezione</p>
-        <p><a class="btn btn-secondary" href="<?php echo site_url('ambientazione'); ?>" role="button">Esplora il mondo della land &raquo;</a></p>
+        <p><a class="btn btn-primary" href="<?php echo site_url('ambientazione'); ?>" role="button">Esplora il mondo della land &raquo;</a></p>
       </div>
       <div class="col-md-4">
         <h2>Razze di gioco</h2>
-        <p>Le razze di gioco disponibili all'interno della land chi sarai in questo mondo?</p>
-        <p><a class="btn btn-secondary" href="<?php echo site_url('razze') ?>" role="button">Scopri le razze del gioco &raquo;</a></p>
+        <p>La scelta della razza del personaggio è fondamentale per inizare ad interpretare il vostro personaggio. Chi sarai in questo mondo?</p>
+        <p><a class="btn btn-primary" href="<?php echo site_url('razze') ?>" role="button">Scopri le razze del gioco &raquo;</a></p>
       </div>
     </div>
 

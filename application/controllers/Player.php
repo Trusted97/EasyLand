@@ -17,18 +17,17 @@ class Player extends CI_Controller
 
         $crud->set_table('land_player')
           ->set_subject('Giocatori')
-          ->columns('player_nicename', 'player_description', 'player_race', 'player_equipment', 'player_pics')
+          ->columns('player_nicename', 'player_description', 'player_race', 'player_pics')
           ->display_as('player_nicename', 'Nome Giocatore')
           ->display_as('player_users_id', 'ID Utente')
           ->display_as('player_description', 'Descrizione Giocatore')
           ->display_as('player_race', 'Razza Giocatore')
-          ->display_as('player_equipment', 'Equip Giocatore')
           ->display_as('player_pics', 'Immagine Giocatore');
 
         $crud->set_field_upload('player_pics', 'assets/uploads/files/player_image');
 
-        $crud->fields('player_nicename', 'player_users_id', 'player_description', 'player_race', 'player_equipment', 'player_pics');
-        $crud->required_fields('player_nicename', 'player_users_id', 'player_description', 'player_race', 'player_equipment');
+        $crud->fields('player_nicename', 'player_users_id', 'player_description', 'player_race', 'player_pics');
+        $crud->required_fields('player_nicename', 'player_users_id', 'player_description', 'player_race');
 
         $crud->set_relation('player_race', 'land_races', 'races_name');
         $crud->set_relation('player_users_id', 'users', '{id} - {username}');
