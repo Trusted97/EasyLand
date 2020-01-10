@@ -15,6 +15,7 @@ class Auth extends CI_Controller
         $this->load->database();
         $this->load->library(['ion_auth', 'form_validation']);
         $this->load->helper(['url', 'language']);
+        $this->load->model('player_model');
 
         $this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
 
@@ -80,13 +81,17 @@ class Auth extends CI_Controller
             if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember)) {
                 //if the login is successful and is an admin redirect to dashboard otherwise go to user admin screen
                 if ($this->ion_auth->in_group('admin')) {
+                    if ($this->ion_auth->in_group('giocatori')) {
+                        $user_id = $this->ion_auth->user()->row()->id;
+                        $this->player_model->set_player_logged(1, $user_id);
+                    }
                     $this->session->set_flashdata('message', $this->ion_auth->messages());
                     redirect('auth/index', 'refresh');
-                } else {
-                    $data['title'] = 'EasyLand';
-                    $this->load->view('parts/header', $data);
-                    $this->load->view('homepage');
-                    $this->load->view('parts/footer');
+                } elseif ($this->ion_auth->in_group('giocatori')) {
+                    // TODO: CALL MODEL FOR SET PLAYER ONLINE
+                    $user_id = $this->ion_auth->user()->row()->id;
+                    $this->player_model->set_player_logged(1, $user_id);
+                    redirect('/', 'refresh');
                 }
             } else {
                 // if the login was un-successful
@@ -133,6 +138,10 @@ class Auth extends CI_Controller
     public function logout()
     {
         $this->data['title'] = "Logout";
+
+        //log the user out from player table
+        $user_id = $this->ion_auth->user()->row()->id;
+        $this->player_model->set_player_logged(0, $user_id);
 
         // log the user out
         $this->ion_auth->logout();

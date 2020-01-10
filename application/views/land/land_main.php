@@ -14,33 +14,38 @@
 
         <div class="card" style="width: 13rem;">
           <img src="<?php echo site_url('assets/land/default-place.png'); ?>" class="card-img-top" alt="Luogo di default">
-          <div class="card-body">
-            <p class="card-text text-center">Condizioni meteo</p>
-            <p class="card-text text-center"><?php echo date('m/d/Y'); ?></p>
-            <p class="card-text text-center">Nuvoloso -4°C</p>
+          <div class="card-body text-center">
+
+            <p class="card-text">Condizioni meteo</p>
+            <p class="card-text"><?php echo date('d/m/Y'); ?></p>
+            <p class="card-text">Nuvoloso -4°C</p>
+
             <div class="dropdown-divider"></div>
-            <a class="btn btn-outline-info mb-2" href="#">Messaggi</a>
+
+            <a class="btn btn-outline-info mb-2 mt-2" href="#">Messaggi</a>
+
             <div class="dropdown-divider"></div>
+
             <h5 class="card-title">Menu</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
             <ul class="list-group">
               <li class="list-group-item">
-                <a href="<?php echo site_url('land_index'); ?>">Aggiorna</a>
+                <a href="<?php echo site_url('land'); ?>">Aggiorna</a>
               </li>
               <li class="list-group-item">
-                <a href="<?php echo site_url('land_index'); ?>">Mappa</a>
+                <a href="<?php echo site_url(); ?>">Mappa</a>
               </li>
               <li class="list-group-item">
-                <a href="<?php echo site_url('land_index'); ?>">Scheda</a>
+                <a href="<?php echo site_url(); ?>">Scheda</a>
               </li>
               <li class="list-group-item">
-                <a href="<?php echo site_url('land_index'); ?>">Bacheca</a>
+                <a href="<?php echo site_url(); ?>">Bacheca</a>
               </li>
               <li class="list-group-item">
-                <a href="<?php echo site_url('land_index'); ?>">Gestione</a>
+                <a href="<?php echo site_url(); ?>">Gestione</a>
               </li>
               <li class="list-group-item">
-                <a href="<?php echo site_url('land_index'); ?>">Servizi</a>
+                <a href="<?php echo site_url(); ?>">Servizi</a>
               </li>
             </ul>
 
@@ -54,8 +59,14 @@
         One of three columns
       </div>
 
-      <div class="col-md-2 bg-danger">
-        One of three columns
+      <div class="col-md-2">
+        <div class="container text-center">
+          <h4>Giocatori Online</h4>
+          <?php foreach ($player_online as $key => $player): ?>
+            <p><?php echo $player->player_nicename; ?> <span class="badge badge-success">Online</span> </p>
+          <?php endforeach; ?>
+        </div>
+
       </div>
 
     </div>
