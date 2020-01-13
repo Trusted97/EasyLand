@@ -65,6 +65,7 @@
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="<?php echo site_url('story/manage') ?>">Gestione Ambientazione</a>
+							<a class="dropdown-item" href="<?php echo site_url('ability/manage') ?>">Gestione Abilità</a>
 							<a class="dropdown-item" href="#">Gestione Gilde (Non disponibile)</a>
 							<a class="dropdown-item" href="<?php echo site_url('market/manage'); ?>">Gestione Mercati</a>
 							<a class="dropdown-item" href="<?php echo site_url('equip/manage'); ?>">Gestione Oggetti</a>

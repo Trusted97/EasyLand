@@ -39,7 +39,7 @@ class Player extends CI_Controller
 
     public function _player_output($output = null)
     {
-        $data['title'] = 'Gestione utenti';
+        $data['title'] = 'Gestione giocatori';
         $data['files'] = (array)$output;
 
         $this->load->view('parts/admin_header', $data);
