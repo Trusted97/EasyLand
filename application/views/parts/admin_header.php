@@ -71,6 +71,7 @@
 							<a class="dropdown-item" href="<?php echo site_url('equip/manage'); ?>">Gestione Oggetti</a>
 							<a class="dropdown-item" href="<?php echo site_url('rulebook/manage'); ?>">Gestione Regolamento</a>
 							<a class="dropdown-item" href="<?php echo site_url('races/manage'); ?>">Gestione Razze di Gioco</a>
+							<a class="dropdown-item" href="<?php echo site_url('room/manage') ?>">Gestione Stanze</a>
 						</div>
 					</li>
   				<li class="nav-item active">
