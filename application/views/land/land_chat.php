@@ -16,11 +16,11 @@
         <div class="container-fluid modal-dialog-scrollable" role="document">
 
           <div class="modal-content">
-            <div class="modal-body">
+            <div id="chat-container" class="modal-body">
               <div class="toast-body">Hello, world! This is a toast message.</div>
               <div class="toast-body">Hello, world! This is a toast message.</div>
             </div>
-            <div class="modal-footer">
+            <div id="container-message" class="modal-footer">
               <select class="form-control">
                 <option>Parlato</option>
                 <option>Azione</option>
@@ -28,9 +28,8 @@
                 <option>Master</option>
                 <option>PNG</option>
               </select>
-              <!-- <input type="text" class="form-control" placeholder="Messaggio"> -->
-              <textarea class="form-control" placeholder="Messaggio"></textarea>
-              <input class="btn btn-primary mb-2" type="submit" value="Invia messaggio">
+              <textarea id="land-chat-message" class="form-control" placeholder="Messaggio"></textarea>
+              <input id="message-button" class="btn btn-primary mb-2" type="submit" value="Invia messaggio">
             </div>
           </div>
 

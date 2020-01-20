@@ -20,6 +20,9 @@
 
 	<script type="text/javascript" defer src="<?php echo site_url('assets/jquery-3.4.1.min.js'); ?>"></script>
 	<script type="text/javascript" defer src="<?php echo site_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
+	<script type="text/javascript" defer src="<?php echo site_url('assets/land/panel-land.js'); ?>"></script>
+
+	<input type="hidden" id="site_url" value="<?php echo site_url(); ?>">
 
 	<title><?php echo $title; ?></title>
 

@@ -21,11 +21,23 @@ class Land extends CI_Controller
         $this->load->view('land/land_footer');
     }
 
-    public function stanza($chatroom_id)
+    public function chatroom($chatroom_id)
     {
+        if (count($this->room_model->get_chatroom_by_id($chatroom_id)) == 0) { //If not is a good chatroom id redirect to land page
+            redirect('land', 'refresh');
+        }
+        
         $data['title'] = 'EasyLand - Chat';
         $data['player_online'] = $this->land_model->get_player_online();
         $data['room_info'] = $this->room_model->get_chatroom_by_id($chatroom_id);
+        $data['chatroom_id'] = $chatroom_id;
+
+        $chatroom_data = array(
+          'chatroom_id'  => $chatroom_id
+        );
+        $this->session->set_userdata($chatroom_data);
+
+
         $this->load->view('land/land_header', $data);
         $this->load->view('land/land_chat');
         $this->load->view('land/land_footer');
