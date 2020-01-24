@@ -19,7 +19,7 @@
 								<p class="card-text"><?php echo $chatroom->chatroom_name; ?></p>
                 <p><?php echo $chatroom->chatroom_description; ?></p>
 								<div class="d-flex justify-content-between align-items-center">
-									<a href="<?php echo 'stanza/'.$chatroom->chatroom_id; ?>" class="btn btn-outline-primary">Vai alla stanza</a>
+									<a href="<?php echo site_url('land/chatroom/'.$chatroom->chatroom_id); ?>" class="btn btn-outline-primary">Vai alla stanza</a>
 								</div>
 							</div>
 						</div>

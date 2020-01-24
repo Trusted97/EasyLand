@@ -17,8 +17,7 @@
 
           <div class="modal-content">
             <div id="chat-container" class="modal-body">
-              <div class="toast-body">Hello, world! This is a toast message.</div>
-              <div class="toast-body">Hello, world! This is a toast message.</div>
+              <!-- <div class="toast-body">Hello, world! This is a toast message.</div> -->
             </div>
             <div id="container-message" class="modal-footer">
               <select class="form-control">

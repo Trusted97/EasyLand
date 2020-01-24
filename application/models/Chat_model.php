@@ -10,16 +10,20 @@ class Chat_model extends CI_Model
 
     public function get_last_messages()
     {
-        // $sql = "SELECT * FROM some_table WHERE id = ? AND status = ? AND author = ?";
-        // $this->db->query($sql, array(3, 'live', 'Rick'));
-        $query = $this->db->get('land_chatroom_message');
+        $chatroom_id = $this->session->userdata('chatroom_id');
+
+        $sql = "SELECT * FROM land_chatroom_message WHERE message_chatroom_id = ?";
+        $query = $this->db->query($sql, array($chatroom_id));
         $chat_message_array = json_encode($query->result());
+
         return $chat_message_array;
     }
 
-    public function add_message_to_chatroom($message, $chatroom_id, $user_id)
+    public function add_message_to_chatroom($message, $user_id)
     {
         $escaped_message = $this->db->escape_str($message);
+
+        $chatroom_id = $this->session->userdata('chatroom_id');
 
         $data = array(
           'message_user_id' => $user_id,
@@ -28,5 +32,9 @@ class Chat_model extends CI_Model
         );
 
         $this->db->insert('land_chatroom_message', $data);
+
+        $message_id = $this->db->insert_id();
+        $q = $this->db->get_where('land_chatroom_message', array('message_id' => $message_id));
+        return json_encode($q->row());
     }
 }

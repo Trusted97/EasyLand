@@ -21,8 +21,7 @@ class Chat extends CI_Controller
     {
         $user_id = $this->ion_auth->user()->row()->id;
         $chat_message = $this->input->post('message');
-        $chatroom_id = $this->session->userdata('chatroom_id'); //Add to session in Land Controller function chatroom
 
-        $this->chat_model->add_message_to_chatroom($chat_message, $chatroom_id, $user_id);
+        echo $this->chat_model->add_message_to_chatroom($chat_message, $user_id);
     }
 }
