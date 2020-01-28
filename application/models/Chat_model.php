@@ -19,6 +19,17 @@ class Chat_model extends CI_Model
         return $chat_message_array;
     }
 
+    public function get_last_messages_id()
+    {
+        $chatroom_id = $this->session->userdata('chatroom_id');
+
+        $sql = "SELECT message_id FROM land_chatroom_message WHERE message_chatroom_id = ?";
+        $query = $this->db->query($sql, array($chatroom_id));
+        $chat_message_array = json_encode($query->result());
+
+        return $chat_message_array;
+    }
+
     public function add_message_to_chatroom($message, $user_id)
     {
         $escaped_message = $this->db->escape_str($message);

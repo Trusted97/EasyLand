@@ -17,6 +17,18 @@ class Chat extends CI_Controller
         echo $chat_message_array;
     }
 
+    public function get_messages_id()
+    {
+        $chat_message_array = $this->chat_model->get_last_messages_id();
+        echo $chat_message_array;
+    }
+
+    public function get_message_by_id()
+    {
+        $chat_message_array = $this->chat_model->get_last_messages_id();
+        echo $chat_message_array;
+    }
+
     public function insert_message()
     {
         $user_id = $this->ion_auth->user()->row()->id;
