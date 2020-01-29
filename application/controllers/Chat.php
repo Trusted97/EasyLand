@@ -25,7 +25,8 @@ class Chat extends CI_Controller
 
     public function get_message_by_id()
     {
-        $chat_message_array = $this->chat_model->get_last_messages_id();
+        $messageId = $this->input->post('messageId');
+        $chat_message_array = $this->chat_model->get_messages_from_id($messageId);
         echo $chat_message_array;
     }
 

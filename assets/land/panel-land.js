@@ -20,7 +20,8 @@ $( document ).ready(function() {
         var obj = JSON.parse(data); //Parse json response
         for (var i = 0; i < obj.length; i++) {
           if (!messages_id.includes(obj[i].message_id)){
-            console.log("Da aggiungere quindi aggiungo il messaggio alla chat e poi aggiungo l'id");
+            getMessageById(obj[i].message_id);
+            messages_id.push(obj[i].message_id);
           }
 
         }
