@@ -54,6 +54,7 @@ $route['stanza/(:any)'] = 'land/chatroom/$1';
 $route['ambientazione'] = 'story/public_story';
 $route['razze'] = 'races/public_races';
 $route['regolamento'] = 'rulebook/public_rulebook';
+$route['registrazione'] = 'homepage/index_register';
 
 $route['default_controller'] = 'homepage';
 $route['404_override'] = '';

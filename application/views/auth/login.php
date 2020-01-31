@@ -5,7 +5,7 @@
 <?php echo form_open("auth/login", $form_attributes);?>
 
   <div class="text-center mb-4">
-    <img class="mb-4" src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <a href="<?php echo site_url(); ?>"><img class="mb-4" src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"></a>
     <h1 class="h3 mb-3 font-weight-normal"><?php echo lang('login_heading');?></h1>
     <p><?php echo lang('login_subheading');?></p>
   </div>

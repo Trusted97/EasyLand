@@ -8,8 +8,6 @@ $( document ).ready(function() {
 
     var newMessageIndex = 0; // Declare a numeric variable to use like new index to show a new chat message.
 
-    //$("#chat-container").append('<div class="toast-body">'+messages_array[i].message_content+'</div>');
-
     function updateChat() {
 
       $.ajax({
@@ -88,6 +86,8 @@ $( document ).ready(function() {
         })
         .done(function( last_msg ) {
           var obj = JSON.parse(last_msg); //Parse json response
+
+          $('#land-chat-message').val('');
 
           // messages.push({
           //   message_id: obj.message_id,

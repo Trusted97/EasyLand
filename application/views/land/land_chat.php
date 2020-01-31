@@ -17,18 +17,39 @@
 
           <div class="modal-content">
             <div id="chat-container" class="modal-body">
-              <!-- <div class="toast-body">Hello, world! This is a toast message.</div> -->
+
             </div>
             <div id="container-message" class="modal-footer">
-              <select class="form-control">
-                <option>Parlato</option>
-                <option>Azione</option>
-                <option>Sussurro</option>
-                <option>Master</option>
-                <option>PNG</option>
-              </select>
-              <textarea id="land-chat-message" class="form-control" placeholder="Messaggio"></textarea>
-              <input id="message-button" class="btn btn-primary mb-2" type="submit" value="Invia messaggio">
+              <!-- <div class="row">
+                <div class="col-sm-6 col-md-8">
+                  <select class="form-control">
+                    <option>Parlato</option>
+                    <option>Azione</option>
+                    <option>Sussurro</option>
+                    <option>Master</option>
+                    <option>PNG</option>
+                  </select>
+                  <textarea id="land-chat-message" class="form-control" placeholder="Messaggio"></textarea>
+                </div>
+                <div class="mt-2 col-6 col-md-4">
+                  <input id="message-button" class="btn btn-primary mb-2" type="submit" value="Invia messaggio">
+                </div>
+              </div> -->
+              <div class="input-group mb-3">
+                <select id="message_type">
+                  <option selected>Tipo</option>
+                  <option>Parlato</option>
+                  <option>Azione</option>
+                  <option>Sussurro</option>
+                  <option>Master</option>
+                  <option>PNG</option>
+                </select>
+                <textarea id="land-chat-message" class="form-control"></textarea>
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" id="message-button">Invia</button>
+                </div>
+              </div>
+
             </div>
           </div>
 

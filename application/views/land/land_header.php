@@ -49,7 +49,7 @@
 
 			<a class="btn btn-primary my-2 my-sm-0 mr-2" href="<?php echo site_url('land'); ?>">Land</a>
 			<?php if ($this->ion_auth->in_group('admin')): ?>
-				<a class="btn btn-primary my-2 my-sm-0 mr-2" href="<?php echo site_url('auth/index'); ?>">Dashboard</a>
+				<a class="btn btn-primary my-2 my-sm-0 mr-2" href="<?php echo site_url('auth/index'); ?>">Admin Dashboard</a>
 			<?php endif; ?>
 			<a class="btn btn-outline-light mr-2" href="<?php echo site_url('auth/logout'); ?>">Logout</a>
 
