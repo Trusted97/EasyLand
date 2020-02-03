@@ -89,14 +89,6 @@ $( document ).ready(function() {
 
           $('#land-chat-message').val('');
 
-          // messages.push({
-          //   message_id: obj.message_id,
-          //   message_content: obj.message_content,
-          //   message_user_id: obj.message_user_id,
-          //   message_chatroom_id: obj.message_chatroom_id,
-          //   message_timestamp: obj.message_timestamp
-          // });
-
         });
       }
 

@@ -4,7 +4,7 @@
       <div class="col-md-6">
         <h3 class="dark-grey">Registrazione</h3>
 
-        <form action="index.html" method="post">
+        <?php echo form_open('homepage/register_player'); ?>
 
           <div class="form-group col-lg-8">
             <label>E-Mail</label>
@@ -14,8 +14,20 @@
 
           <div class="form-group col-lg-6">
             <label>Password</label>
-            <input type="password" name="" class="form-control" id="" value="">
+            <input type="password" name="password" class="form-control" id="" value="">
           </div>
+
+          <div class="form-group col-lg-8">
+            <label>Nome</label>
+            <input type="text" name="name" class="form-control" maxlength="20">
+          </div>
+
+          <div class="form-group col-lg-8">
+            <label>Cognome</label>
+            <input type="text" name="surname" class="form-control" maxlength="20">
+          </div>
+
+          <div class="dropdown-divider"></div>
 
           <div class="form-group col-lg-8">
             <label>Nome Personaggio</label>
@@ -31,7 +43,7 @@
             <div class="input-group-prepend">
               <label class="input-group-text" for="inputGroupSelect01">Razza del personaggio</label>
             </div>
-            <select class="custom-select" id="inputGroupSelect01">
+            <select name="races" class="custom-select" id="inputGroupSelect01">
               <option selected>Scegli razza...</option>
               <?php foreach ($races_array as $key => $race): ?>
                 <option value="<?php echo $race->races_id; ?>"><?php echo $race->races_name; ?></option>
@@ -39,26 +51,120 @@
             </select>
           </div>
 
-          <div class="form-group col-lg-6">
-            <label>Repeat Password</label>
-            <input type="password" name="" class="form-control" id="" value="">
+          <div class="alert alert-info" role="alert">
+            La somma dei punteggi delle caratteristiche non deve essere superiore a 40
           </div>
 
-          <div class="form-group col-lg-6">
-            <label>Repeat Email Address</label>
-            <input type="" name="" class="form-control" id="" value="">
+          <div class="input-group mb-3 col-lg-5">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Forza</label>
+            </div>
+            <select class="custom-select" name="str_point" id="str_point">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+
+          <div class="input-group mb-3 col-lg-5">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Costituzione</label>
+            </div>
+            <select class="custom-select" name="con_point" id="con_point">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+
+          <div class="input-group mb-3 col-lg-5">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Destrezza</label>
+            </div>
+            <select class="custom-select" name="dex_point" id="dex_point">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+
+          <div class="input-group mb-3 col-lg-5">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Intelligenza</label>
+            </div>
+            <select class="custom-select" name="int_point"id="int_point">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+
+          <div class="input-group mb-3 col-lg-5">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Saggezza</label>
+            </div>
+            <select class="custom-select" name="wis_point" id="wis_point">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+
+          <div class="input-group mb-3 col-lg-5">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Carisma</label>
+            </div>
+            <select class="custom-select" name="cha_point" id="cha_point">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
           </div>
 
           <div class="col-sm-6">
-            <input type="checkbox" class="checkbox" /> Sigh up for our newsletter
-          </div>
-
-          <div class="col-sm-6">
-            <input type="checkbox" class="checkbox" /> Send notifications to this email
-          </div>
-
-          <div class="col-sm-6">
-            <button type="submit" class="btn btn-primary">Register</button>
+            <input type="submit" class="btn btn-primary" value="Registrati">
           </div>
         </form>
 

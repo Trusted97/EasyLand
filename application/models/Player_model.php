@@ -25,4 +25,30 @@ class Player_model extends CI_Model
             $this->db->query($sql, array($logged,$user_id));
         }
     }
+
+    public function insert_player($user_id, $race_id, $username, $stats_point)
+    {
+        var_dump($stats_point);
+        var_dump($stats_point['int']);
+        $data = array(
+          'player_users_id' => $user_id,
+          'player_nicename' => $username,
+          'player_description' => '',
+          'player_race' => $race_id,
+          'player_equipment' => '',
+          'player_strength' => $stats_point['str'],
+          'player_constitution' => $stats_point['con'],
+          'player_dexterity' => $stats_point['dex'],
+          'player_wisdom' => $stats_point['wis'],
+          'player_intelligence' => $stats_point['int'],
+          'player_charisma' => $stats_point['cha'],
+          'player_health' => 100,
+          'player_health_max' => 100,
+          'player_salary' => 0,
+          'player_pics' => '',
+          'player_logged' => 0
+        );
+
+        $this->db->insert('land_player', $data);
+    }
 }

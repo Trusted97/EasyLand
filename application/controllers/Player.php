@@ -6,7 +6,6 @@ class Player extends CI_Controller
     {
         parent::__construct();
 
-        // $this->load->model('player_model');
         $this->load->helper('url');
         $this->load->library('grocery_CRUD');
     }

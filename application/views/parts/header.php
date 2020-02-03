@@ -54,7 +54,7 @@
 					<a class="btn btn-primary my-2 my-sm-0" href="<?php echo site_url('land/index'); ?>">Land</a>
 				<?php endif; ?>
 			<?php else: //If not logged in display button for register users or login?>
-				<a class="btn btn-primary my-2 my-sm-0 mr-3" href="<?php echo site_url('registrazione'); ?>">Iscriviti</a>
+				<a class="btn btn-primary my-2 my-sm-0 mr-3" href="<?php echo site_url('registrazione'); ?>">Registrati</a>
 				<a class="btn btn-outline-light my-2 my-sm-0" href="<?php echo site_url('auth/index'); ?>">Accedi</a>
 			<?php endif; ?>
 

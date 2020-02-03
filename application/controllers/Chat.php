@@ -35,6 +35,6 @@ class Chat extends CI_Controller
         $user_id = $this->ion_auth->user()->row()->id;
         $chat_message = $this->input->post('message');
 
-        echo $this->chat_model->add_message_to_chatroom($chat_message, $user_id);
+        $this->chat_model->add_message_to_chatroom($chat_message, $user_id);
     }
 }

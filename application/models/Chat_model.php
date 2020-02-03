@@ -54,9 +54,5 @@ class Chat_model extends CI_Model
         );
 
         $this->db->insert('land_chatroom_message', $data);
-
-        $message_id = $this->db->insert_id();
-        $q = $this->db->get_where('land_chatroom_message', array('message_id' => $message_id));
-        return json_encode($q->row());
     }
 }
