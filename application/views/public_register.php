@@ -1,3 +1,8 @@
+<?php if ($error != ''): ?>
+  <div class="alert alert-danger" role="alert">
+    <?php echo $error; ?>
+  </div>
+<?php endif; ?>
 <div class="container-fluid">
   <section class="container">
     <div class="row mt-4">
@@ -39,6 +44,7 @@
             <input type="text" name="surname_character" class="form-control" maxlength="20">
           </div>
 
+          <a href="<?php echo site_url('razze'); ?>" target="_blank" class="ml-3 badge badge-info">Scopri le razze!</a>
           <div class="input-group mb-3 col-lg-12">
             <div class="input-group-prepend">
               <label class="input-group-text" for="inputGroupSelect01">Razza del personaggio</label>

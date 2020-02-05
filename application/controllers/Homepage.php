@@ -11,7 +11,10 @@ class Homepage extends CI_Controller
 
     public function index()
     {
+        $success = $this->session->flashdata('success');
+
         $data['title'] = 'EasyLand';
+        $data['success'] = $success;
         $this->load->view('parts/header', $data);
         $this->load->view('homepage');
         $this->load->view('parts/footer');
@@ -21,8 +24,11 @@ class Homepage extends CI_Controller
     {
         $this->load->model('races_model');
 
+        $error = $this->session->flashdata('error');
+
         $data['title'] = 'Registrazione';
         $data['races_array'] = $this->races_model->get_array_races();
+        $data['error'] = $error;
 
         $this->load->view('parts/header', $data);
         $this->load->view('public_register');
@@ -50,6 +56,7 @@ class Homepage extends CI_Controller
 
 
         if ($this->form_validation->run() == false) {
+            redirect('registrazione');
         } else {
             $email = $this->input->post('email_address');
             $password = $this->input->post('password');
@@ -65,6 +72,8 @@ class Homepage extends CI_Controller
             $int_point = $this->input->post('int_point');
             $wis_point = $this->input->post('wis_point');
             $cha_point = $this->input->post('cha_point');
+
+
 
             $stat_point = array(
             'str' => $str_point,
@@ -82,9 +91,16 @@ class Homepage extends CI_Controller
 
             $group = array('2'); // Set users as player.
 
-            $user_id = $this->ion_auth->register($email, $password, $email, $additional_data, $group);
+            $tot_point = $str_point + $con_point + $dex_point + $int_point + $wis_point + $cha_point;
 
-            $this->player_model->insert_player($user_id, $race_id, $name_character, $stat_point);
+            if ($tot_point > 40) {
+                $this->session->set_flashdata('error', 'La somma dei punteggi non può superare 40!');
+                redirect('registrazione');
+            } else {
+                $user_id = $this->ion_auth->register($email, $password, $email, $additional_data, $group);
+
+                $this->player_model->insert_player($user_id, $race_id, $name_character, $stat_point);
+            }
         }
     }
 }

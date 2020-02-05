@@ -49,6 +49,11 @@ class Player_model extends CI_Model
           'player_logged' => 0
         );
 
-        $this->db->insert('land_player', $data);
+        $player_id = $this->db->insert('land_player', $data);
+
+        if ($player_id > 0) {
+            $this->session->set_flashdata('success', 1);
+            redirect('/');
+        }
     }
 }

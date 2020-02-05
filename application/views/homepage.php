@@ -1,4 +1,11 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+
+<?php if ($success == 1): ?>
+  <div class="alert alert-success text-center" role="alert">
+    Il tuo personaggio è stato creato con successo puoi già entrare <a href="<?php echo site_url('auth/login'); ?>" class="alert-link">dentro la Land!</a>
+  </div>
+<?php endif; ?>
+
 <main role="main">
 
   <!-- Main jumbotron for a primary marketing message or call to action -->
