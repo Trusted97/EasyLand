@@ -7,6 +7,7 @@ class Homepage extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('form');
+        $this->load->library('dice');
     }
 
     public function index()
@@ -15,6 +16,7 @@ class Homepage extends CI_Controller
 
         $data['title'] = 'EasyLand';
         $data['success'] = $success;
+        $this->dice->calc_dice('d20');
         $this->load->view('parts/header', $data);
         $this->load->view('homepage');
         $this->load->view('parts/footer');
