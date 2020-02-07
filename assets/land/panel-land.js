@@ -94,6 +94,26 @@ $( document ).ready(function() {
 
     });
 
+    $( "#dice-button" ).on( "click", function() {
+      var dice_message = $('#land-dice-message').val();
+
+      if (dice_message != '' && dice_message != null){
+
+        $.ajax({
+          method: "POST",
+          url: site_url+"chat/insert_dice_message",
+          data: {
+            dice_message: dice_message
+          }
+        })
+        .done(function( last_msg ) {
+          $('#land-dice-message').val('');
+
+        });
+      }
+
+    });
+
   }
 
 });

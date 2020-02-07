@@ -21,8 +21,6 @@ class Dice
     {
         $calc = new Calc($expression);
 
-        echo $calc->infix();
-        echo " => ";
-        echo $calc() . "\n";
+        return $calc->infix()." => ".$calc();
     }
 }

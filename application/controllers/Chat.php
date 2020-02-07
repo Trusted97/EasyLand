@@ -37,4 +37,16 @@ class Chat extends CI_Controller
 
         $this->chat_model->add_message_to_chatroom($chat_message, $user_id);
     }
+
+    public function insert_dice_message()
+    {
+        $this->load->library('dice');
+
+        $user_id = $this->ion_auth->user()->row()->id;
+        $dice_message = $this->input->post('dice_message');
+
+        $calculed_dice_message = $this->dice->calc_dice($dice_message);
+
+        $this->chat_model->add_message_to_chatroom($calculed_dice_message, $user_id);
+    }
 }

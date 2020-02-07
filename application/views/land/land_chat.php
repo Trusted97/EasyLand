@@ -36,6 +36,12 @@
                 </div>
               </div> -->
               <div class="input-group mb-3">
+                <input id="land-dice-message" class="form-control" type="text">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" id="dice-button">Calcola tiro</button>
+                </div>
+              </div>
+              <div class="input-group mb-3">
                 <select id="message_type">
                   <option selected>Tipo</option>
                   <option>Parlato</option>
