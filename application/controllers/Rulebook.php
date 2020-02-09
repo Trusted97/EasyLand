@@ -8,7 +8,7 @@ class Rulebook extends CI_Controller
 
         $this->load->helper('url');
         $this->load->model('rulebook_model');
-        $this->load->library('grocery_CRUD');
+        $this->load->library('grocery_CRUD', 'ion_auth');
     }
 
     public function public_rulebook()
@@ -22,6 +22,14 @@ class Rulebook extends CI_Controller
 
     public function manage()
     {
+        if (!$this->ion_auth->logged_in()) {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        } elseif (!$this->ion_auth->is_admin()) { // remove this elseif if you want to enable this for non-admins
+            // redirect them to the home page because they must be an administrator to view this
+            show_error('You must be an administrator to view this page.');
+        }
+
         $crud = new grocery_CRUD();
 
         $crud->set_table('land_rulebook')
@@ -40,6 +48,13 @@ class Rulebook extends CI_Controller
 
     public function _rulebook_output($output = null)
     {
+        if (!$this->ion_auth->logged_in()) {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        } elseif (!$this->ion_auth->is_admin()) { // remove this elseif if you want to enable this for non-admins
+            // redirect them to the home page because they must be an administrator to view this
+            show_error('You must be an administrator to view this page.');
+        }
         $data['title'] = 'Gestione regolamento';
         $data['files'] = (array)$output;
 

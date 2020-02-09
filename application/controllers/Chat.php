@@ -9,6 +9,11 @@ class Chat extends CI_Controller
         $this->load->helper('url');
         $this->load->library('ion_auth');
         $this->load->model('chat_model');
+
+        if (!$this->ion_auth->logged_in()) {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        }
     }
 
     public function get_messages()

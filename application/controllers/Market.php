@@ -7,8 +7,15 @@ class Market extends CI_Controller
         parent::__construct();
 
         $this->load->helper('url');
-        //$this->load->model('rulebook_model');
-        $this->load->library('grocery_CRUD');
+        $this->load->library('grocery_CRUD', 'ion_auth');
+
+        if (!$this->ion_auth->logged_in()) {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        } elseif (!$this->ion_auth->is_admin()) { // remove this elseif if you want to enable this for non-admins
+            // redirect them to the home page because they must be an administrator to view this
+            show_error('You must be an administrator to view this page.');
+        }
     }
 
     // public function public_rulebook()

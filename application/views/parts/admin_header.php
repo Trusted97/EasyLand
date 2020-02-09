@@ -75,7 +75,7 @@
 						</div>
 					</li>
   				<li class="nav-item active">
-  					<a class="nav-link" href="<?php echo site_url('races/manage'); ?>">Gestione info Land</a>
+  					<a class="nav-link" href="<?php echo site_url('land/manage'); ?>">Gestione Land</a>
   				</li>
   			</ul>
   			<a class="btn btn-outline-light my-2 my-sm-0" href="<?php echo site_url(); ?>">Torna alla Home</a>

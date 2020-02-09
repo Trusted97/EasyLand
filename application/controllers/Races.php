@@ -22,6 +22,16 @@ class Races extends CI_Controller
 
     public function manage()
     {
+        $this->load->library('ion_auth');
+
+        if (!$this->ion_auth->logged_in()) {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        } elseif (!$this->ion_auth->is_admin()) { // remove this elseif if you want to enable this for non-admins
+            // redirect them to the home page because they must be an administrator to view this
+            show_error('You must be an administrator to view this page.');
+        }
+
         $crud = new grocery_CRUD();
 
         $crud->set_table('land_races')
@@ -49,6 +59,14 @@ class Races extends CI_Controller
 
     public function _races_output($output = null)
     {
+        if (!$this->ion_auth->logged_in()) {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        } elseif (!$this->ion_auth->is_admin()) { // remove this elseif if you want to enable this for non-admins
+            // redirect them to the home page because they must be an administrator to view this
+            show_error('You must be an administrator to view this page.');
+        }
+        
         $data['title'] = 'Gestione razze';
         $data['files'] = (array)$output;
 

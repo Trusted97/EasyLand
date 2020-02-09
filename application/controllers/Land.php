@@ -9,6 +9,16 @@ class Land extends CI_Controller
         $this->load->helper('url');
         $this->load->model('room_model');
         $this->load->model('land_model');
+
+        $this->load->library('ion_auth');
+
+        if (!$this->ion_auth->logged_in()) {
+            // redirect them to the login page
+            redirect('auth/login', 'refresh');
+        } elseif (!$this->ion_auth->is_admin()) { // remove this elseif if you want to enable this for non-admins
+            // redirect them to the home page because they must be an administrator to view this
+            show_error('You must be an administrator to view this page.');
+        }
     }
 
     public function index()
@@ -21,12 +31,21 @@ class Land extends CI_Controller
         $this->load->view('land/land_footer');
     }
 
+    public function manage()
+    {
+        $data['title'] = 'EasyLand - Gestione Land';
+        $data['chatroom_array'] = $this->room_model->get_chatroom();
+        $this->load->view('parts/admin_header', $data);
+        $this->load->view('admin/land');
+        $this->load->view('parts/footer');
+    }
+
     public function chatroom($chatroom_id)
     {
         if (count($this->room_model->get_chatroom_by_id($chatroom_id)) == 0) { //If not is a good chatroom id redirect to land page
             redirect('land', 'refresh');
         }
-        
+
         $data['title'] = 'EasyLand - Chat';
         $data['player_online'] = $this->land_model->get_player_online();
         $data['room_info'] = $this->room_model->get_chatroom_by_id($chatroom_id);
