@@ -1,6 +1,5 @@
 <?php
 
-
 require_once(APPPATH.'libraries/Calc.php');
 require_once(APPPATH.'libraries/CalcSet.php');
 require_once(APPPATH.'libraries/CalcDice.php');
